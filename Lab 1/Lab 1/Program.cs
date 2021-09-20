@@ -6,7 +6,8 @@ namespace Lab_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            UserInterface user = new UserInterface();
+            user.startMenu();
         }
     }
 }
