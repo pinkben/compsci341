@@ -91,14 +91,19 @@ namespace Lab_1
 
         public bool removeEntry(int id)
         {
+            bool found = false;
             if (File.Exists(fileName))
             {
                 string fileJsonString = File.ReadAllText(fileName);
                 Entries.Clear();
                 Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
-                if (id > Entries.Count)
+                foreach (Entry entry in Entries)
                 {
-                    return false;
+                    int temp = Int32.Parse(entry.Id);
+                    if (temp == id)
+                    { 
+                        
+                    }
                 }
                 else
                 {

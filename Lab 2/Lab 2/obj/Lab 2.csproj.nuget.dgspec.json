@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2\\Lab 2.csproj": {}
+    "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2\\Lab 2.csproj": {
+    "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2\\Lab 2.csproj",
+        "projectUniqueName": "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2.csproj",
         "projectName": "Lab 2",
-        "projectPath": "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2\\Lab 2.csproj",
+        "projectPath": "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2.csproj",
         "packagesPath": "C:\\Users\\pinkb95\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\Lab 2\\obj\\",
+        "outputPath": "C:\\Users\\pinkb95\\source\\repos\\compsci341\\Lab 2\\Lab 2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
