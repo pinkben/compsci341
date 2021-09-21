@@ -57,7 +57,7 @@ namespace Lab_1
 
         private void addEntry()
         {
-            string[] entry = new string[4];
+            string[] entry = new string[5];
             Console.Write("\nAdding Entry \n============== \nClue: ");
             entry[0] = Console.ReadLine();
             Console.Write("Answer: ");
@@ -91,14 +91,24 @@ namespace Lab_1
         {
             Console.Write("ID to edit: ");
             String response = Console.ReadLine();
-            string[] result = bl.editEntry(response);
-            if (result[0].Equals(""))
+            bool valid = bl.editEntry(response);
+            if (!valid)
             {
                 Console.Write("Error while editing entry: \nINVALID ID");
             }
             else
-            { 
-                
+            {
+                string[] entry = new string[5];
+                Console.Write("\nEditing Entry \n============== \nClue: ");
+                entry[0] = Console.ReadLine();
+                Console.Write("Answer: ");
+                entry[1] = Console.ReadLine();
+                Console.Write("Difficulty: ");
+                entry[2] = Console.ReadLine();
+                Console.Write("Date (mm/dd/yyyy): ");
+                entry[3] = Console.ReadLine();
+                entry[4] = response;
+                bl.addEntry(entry, true);
             }
             startMenu();
         }

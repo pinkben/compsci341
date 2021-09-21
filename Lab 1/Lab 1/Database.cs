@@ -11,41 +11,57 @@ namespace Lab_1
     class Database
     {
         string fileName = "Database.json";
+        List<Entry> Entries = new List<Entry>();
 
-        public String getAllEntries() 
+        public List<Entry> getAllEntries() 
         {
             if (File.Exists(fileName))
             {
-                return File.ReadAllText(fileName);
+                string fileJsonString = File.ReadAllText(fileName);
+                Entries.Clear();
+                Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
+                return Entries;
             }
             else
             {
-                return "";
+                return null;
             }
         }
 
-        public String getEntry(int id) 
+        public Entry getEntry(int id) 
         {
-            return "";
-            /*if (false)
+            if (File.Exists(fileName))
             {
-                return "";
+                string fileJsonString = File.ReadAllText(fileName);
+                Entries.Clear();
+                Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
+                if (id > Entries.Count)
+                {
+                    return null;
+                }
+                else
+                {
+                    return Entries.ElementAt<Entry>(id - 1);
+                }
             }
             else
             {
-                return "";
-            }*/
+                return null;
+            }
         }
 
-        public void addEntry(Entry entry)
+        public void addEntry(Entry entry, bool edit)
         {
             Entry newEntry = entry;
             int idNum;
             if (File.Exists(fileName))
             {
                 string fileJsonString = File.ReadAllText(fileName);
-                Entry lastEntry = JsonSerializer.Deserialize<Entry>(fileJsonString);
-                if (Int32.TryParse(lastEntry.Id, out int lastId))
+                File.Delete(fileName);
+                Entries.Clear();
+                Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
+                // If we are adding an edited entry, we do not need to assign an Id
+                if (Int32.TryParse(Entries.ElementAt<Entry>(Entries.Count - 1).Id, out int lastId) && !edit)
                 {
                     idNum = lastId + 1;
                     newEntry.Id = idNum.ToString();
@@ -56,21 +72,47 @@ namespace Lab_1
             {
                 newEntry.Id = "1";
             }
-            string newJsonString = JsonSerializer.Serialize(newEntry);
+            if (edit)
+            {
+                // Insert edited entry back into correct spot in list
+                if (Int32.TryParse(newEntry.Id, out int entryId))
+                {
+                    Entries.Insert(entryId - 1, newEntry);
+                }
+
+            }
+            else
+            {
+                Entries.Add(newEntry);
+            }
+            string newJsonString = JsonSerializer.Serialize(Entries);
             File.AppendAllText(fileName, newJsonString);
         }
 
         public bool removeEntry(int id)
         {
-            return true;
-            /*if (false)
+            if (File.Exists(fileName))
             {
-                return true;
+                string fileJsonString = File.ReadAllText(fileName);
+                Entries.Clear();
+                Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
+                if (id > Entries.Count)
+                {
+                    return false;
+                }
+                else
+                {
+                    Entries.RemoveAt(id - 1);
+                    File.Delete(fileName);
+                    string newJsonString = JsonSerializer.Serialize(Entries);
+                    File.AppendAllText(fileName, newJsonString);
+                    return true;
+                }
             }
             else
             {
                 return false;
-            }*/
+            }
         }
     }
 }

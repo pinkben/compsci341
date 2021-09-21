@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,11 +27,28 @@ namespace Lab_1
 
         public String getCurrentEntries() 
         {
-            String entries = data.getAllEntries();
-            return entries;
+            StringBuilder sb = new StringBuilder();
+            String allEntries = "";
+            List<Entry> Entries = data.getAllEntries();
+            if (Entries == null)
+            {
+                return allEntries;
+            }
+            else
+            {
+                foreach(Entry entry in Entries)
+                {
+                    sb.AppendLine("Clue: " + entry.Clue);
+                    sb.AppendLine("Answer: " + entry.Answer);
+                    sb.AppendLine("Difficulty: " + entry.Difficulty);
+                    sb.AppendLine("Data: " + entry.Date);
+                    sb.AppendLine("=======");
+                }
+                return sb.ToString();
+            }
         }
 
-        public String addEntry(string[] entry)
+        public String addEntry(string[] entry, bool edit = false)
         {
             if (entry[0].Length > 250 || entry[0].Length < 1)
             {
@@ -53,7 +71,7 @@ namespace Lab_1
                     entry[3].Substring(5,1).Equals("/") &&
                     Int32.TryParse(entry[3].Substring(6), out int year))
                 {
-                    if ((month < 12 && month > 0) && (day < 32 && day > 0) && (year < 9999 && year > 0))
+                    if ((month < 13 && month > 0) && (day < 32 && day > 0) && (year < 10000 && year > 0))
                     {
                         //pass on to db, return blank string
                         var validEntry = new Entry
@@ -61,9 +79,10 @@ namespace Lab_1
                             Clue = entry[0],
                             Answer = entry[1],
                             Difficulty = entry[2],
-                            Date = entry[3] 
+                            Date = entry[3],
+                            Id = entry[4]
                         };
-                        data.addEntry(validEntry);
+                        data.addEntry(validEntry, edit);
                         return "";
                     }
                     else
@@ -81,7 +100,7 @@ namespace Lab_1
 
         public String removeEntry(string id)
         {
-            if (Int32.TryParse(id, out int idNum))
+            if (Int32.TryParse(id, out int idNum)  && idNum > 0)
             {
                 if (data.removeEntry(idNum))
                 {
@@ -98,24 +117,25 @@ namespace Lab_1
             }
         }
 
-        public string[] editEntry(string id)
+        public bool editEntry(string id)
         {
-            string[] result = new string[4];
-            if (Int32.TryParse(id, out int idNum))
+            if (Int32.TryParse(id, out int idNum) && idNum > 0)
             {
-                if (false)
+                Entry entry = data.getEntry(idNum);
+                if (entry == null)
                 {
-                    return result;
+                    return false;
                 }
                 else
                 {
-
-                    return result;
+                    // remove the old entry from the database
+                    data.removeEntry(idNum);
+                    return true;
                 }
             }
             else
             {
-                return result;
+                return false;
             }
         }
     }
