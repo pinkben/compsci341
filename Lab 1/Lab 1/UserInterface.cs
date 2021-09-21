@@ -52,6 +52,7 @@ namespace Lab_1
             Console.WriteLine("\n Entries \n =======");
             String currentEntries = bl.getCurrentEntries();
             Console.WriteLine(currentEntries);
+            startMenu();
         }
 
         private void addEntry()
@@ -63,7 +64,7 @@ namespace Lab_1
             entry[1] = Console.ReadLine();
             Console.Write("Difficulty: ");
             entry[2] = Console.ReadLine();
-            Console.Write("Date: ");
+            Console.Write("Date (mm/dd/yyyy): ");
             entry[3] =  Console.ReadLine();
             String result = bl.addEntry(entry);
             if (result != "")
@@ -82,12 +83,24 @@ namespace Lab_1
         {
             Console.Write("ID to delete: ");
             String response = Console.ReadLine();
+            Console.Write(bl.removeEntry(response));
+            startMenu();
         }
 
         private void editEntry()
         {
             Console.Write("ID to edit: ");
             String response = Console.ReadLine();
+            string[] result = bl.editEntry(response);
+            if (result[0].Equals(""))
+            {
+                Console.Write("Error while editing entry: \nINVALID ID");
+            }
+            else
+            { 
+                
+            }
+            startMenu();
         }
 
         private void quit()

@@ -27,23 +27,23 @@ namespace Lab_1
         public String getCurrentEntries() 
         {
             String entries = data.getAllEntries();
-            return "";
+            return entries;
         }
 
         public String addEntry(string[] entry)
         {
             if (entry[0].Length > 250 || entry[0].Length < 1)
             {
-                return "INVALID CLUE";
+                return "Error while adding entry: \nINVALID CLUE";
             }
             else if (entry[1].Length > 21 || entry[1].Length < 1)
             {
-                return "INVALID ANSWER";
+                return "Error while adding entry: \nINVALID ANSWER";
             }
             else if (!(entry[2].Equals("1") || entry[2].Equals("2") || entry[2].Equals("3") ||
                      entry[2].Equals("4") || entry[2].Equals("5")))
             {
-                return "INVALID DIFFICULTY";
+                return "Error while adding entry: \nINVALID DIFFICULTY";
             }
             else
             {
@@ -55,20 +55,68 @@ namespace Lab_1
                 {
                     if ((month < 12 && month > 0) && (day < 32 && day > 0) && (year < 9999 && year > 0))
                     {
-                        //pass on to tb, return blank string 
+                        //pass on to db, return blank string
+                        var validEntry = new Entry
+                        {
+                            Clue = entry[0],
+                            Answer = entry[1],
+                            Difficulty = entry[2],
+                            Date = entry[3] 
+                        };
+                        data.addEntry(validEntry);
                         return "";
                     }
                     else
                     {
-                        return "INVALID DATE";
+                        return "Error while adding entry: \nINVALID DATE";
                     }
                 }
                 else
                 {
-                    return "INVALID DATE";
+                    return "Error while adding entry: \nINVALID DATE";
                 }
             } 
 
+        }
+
+        public String removeEntry(string id)
+        {
+            if (Int32.TryParse(id, out int idNum))
+            {
+                if (data.removeEntry(idNum))
+                {
+                    return "\n";
+                }
+                else
+                {
+                    return "Error while removing entry: \nUNABLE TO FIND ID";
+                }
+            }
+            else
+            {
+                return "Error while removing entry: \nINVALID ID";
+            }
+        }
+
+        public string[] editEntry(string id)
+        {
+            string[] result = new string[4];
+            if (Int32.TryParse(id, out int idNum))
+            {
+                if (false)
+                {
+                    return result;
+                }
+                else
+                {
+
+                    return result;
+                }
+            }
+            else
+            {
+                return result;
+            }
         }
     }
 }
