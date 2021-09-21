@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_1
 {
-    class UserInterface
+    class UserInterface : IUserInterface
     {
         BusinessLogic bl = new BusinessLogic();
 
@@ -65,14 +65,14 @@ namespace Lab_1
             Console.Write("Difficulty: ");
             entry[2] = Console.ReadLine();
             Console.Write("Date (mm/dd/yyyy): ");
-            entry[3] =  Console.ReadLine();
+            entry[3] = Console.ReadLine();
             String result = bl.addEntry(entry);
             if (result != "")
             {
                 Console.Write("\n" + result + "\n");
                 startMenu();
             }
-            else 
+            else
             {
                 Console.Write("\n");
                 startMenu();

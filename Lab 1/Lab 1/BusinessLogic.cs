@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_1
 {
-    class BusinessLogic
+    class BusinessLogic : IBusinessLogic
     {
         Database data = new Database();
 
@@ -25,7 +25,7 @@ namespace Lab_1
             }
         }
 
-        public String getCurrentEntries() 
+        public String getCurrentEntries()
         {
             StringBuilder sb = new StringBuilder();
             String allEntries = "";
@@ -36,8 +36,9 @@ namespace Lab_1
             }
             else
             {
-                foreach(Entry entry in Entries)
+                foreach (Entry entry in Entries)
                 {
+                    sb.AppendLine(entry.Id + ":");
                     sb.AppendLine("Clue: " + entry.Clue);
                     sb.AppendLine("Answer: " + entry.Answer);
                     sb.AppendLine("Difficulty: " + entry.Difficulty);
@@ -52,23 +53,23 @@ namespace Lab_1
         {
             if (entry[0].Length > 250 || entry[0].Length < 1)
             {
-                return "Error while adding entry: \nINVALID CLUE";
+                return "Error while adding entry: \nINVALID CLUE\n";
             }
             else if (entry[1].Length > 21 || entry[1].Length < 1)
             {
-                return "Error while adding entry: \nINVALID ANSWER";
+                return "Error while adding entry: \nINVALID ANSWER\n";
             }
             else if (!(entry[2].Equals("1") || entry[2].Equals("2") || entry[2].Equals("3") ||
                      entry[2].Equals("4") || entry[2].Equals("5")))
             {
-                return "Error while adding entry: \nINVALID DIFFICULTY";
+                return "Error while adding entry: \nINVALID DIFFICULTY\n";
             }
             else
             {
                 if (Int32.TryParse(entry[3].Substring(0, 2), out int month) &&
-                    entry[3].Substring(2,1).Equals("/") &&
+                    entry[3].Substring(2, 1).Equals("/") &&
                     Int32.TryParse(entry[3].Substring(3, 2), out int day) &&
-                    entry[3].Substring(5,1).Equals("/") &&
+                    entry[3].Substring(5, 1).Equals("/") &&
                     Int32.TryParse(entry[3].Substring(6), out int year))
                 {
                     if ((month < 13 && month > 0) && (day < 32 && day > 0) && (year < 10000 && year > 0))
@@ -87,20 +88,20 @@ namespace Lab_1
                     }
                     else
                     {
-                        return "Error while adding entry: \nINVALID DATE";
+                        return "Error while adding entry: \nINVALID DATE\n";
                     }
                 }
                 else
                 {
-                    return "Error while adding entry: \nINVALID DATE";
+                    return "Error while adding entry: \nINVALID DATE\n";
                 }
-            } 
+            }
 
         }
 
         public String removeEntry(string id)
         {
-            if (Int32.TryParse(id, out int idNum)  && idNum > 0)
+            if (Int32.TryParse(id, out int idNum) && idNum > 0)
             {
                 if (data.removeEntry(idNum))
                 {
@@ -108,12 +109,12 @@ namespace Lab_1
                 }
                 else
                 {
-                    return "Error while removing entry: \nUNABLE TO FIND ID";
+                    return "Error while removing entry: \nUNABLE TO FIND ID\n";
                 }
             }
             else
             {
-                return "Error while removing entry: \nINVALID ID";
+                return "Error while removing entry: \nINVALID ID\n";
             }
         }
 

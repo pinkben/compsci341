@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Lab_1
 {
-    class Database
+    class Database : IDatabase
     {
         string fileName = "Database.json";
         List<Entry> Entries = new List<Entry>();
 
-        public List<Entry> getAllEntries() 
+        public List<Entry> getAllEntries()
         {
             if (File.Exists(fileName))
             {
@@ -28,7 +28,7 @@ namespace Lab_1
             }
         }
 
-        public Entry getEntry(int id) 
+        public Entry getEntry(int id)
         {
             if (File.Exists(fileName))
             {
@@ -61,7 +61,7 @@ namespace Lab_1
                 Entries.Clear();
                 Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
                 // If we are adding an edited entry, we do not need to assign an Id
-                if (Int32.TryParse(Entries.ElementAt<Entry>(Entries.Count - 1).Id, out int lastId) && !edit)
+                if (!edit && Int32.TryParse(Entries.ElementAt<Entry>(Entries.Count - 1).Id, out int lastId))
                 {
                     idNum = lastId + 1;
                     newEntry.Id = idNum.ToString();
