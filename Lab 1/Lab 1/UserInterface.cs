@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +15,7 @@ namespace Lab_1
             Console.Write("Menu \n ==== \n 1. List Entries \n 2. Add Entry" +
                               "\n 3. Delete Entry \n 4. Edit Entry \n 5. Quit \n Choice: ");
             String response = Console.ReadLine();
+            // If the response is valid, moved forward with that action, otherwise send an error and try again
             if (bl.checkMenuSelection(response))
             {
                 switch (response)
@@ -37,7 +38,6 @@ namespace Lab_1
                     default:
                         break;
                 }
-
             }
             else
             {
@@ -50,21 +50,44 @@ namespace Lab_1
         private void listEntries()
         {
             Console.WriteLine("\n Entries \n =======");
+            String currentEntries = bl.getCurrentEntries();
+            Console.WriteLine(currentEntries);
         }
 
         private void addEntry()
         {
-            Console.WriteLine("\n Adding Entry \n ==============");
+            string[] entry = new string[4];
+            Console.Write("\nAdding Entry \n============== \nClue: ");
+            entry[0] = Console.ReadLine();
+            Console.Write("Answer: ");
+            entry[1] = Console.ReadLine();
+            Console.Write("Difficulty: ");
+            entry[2] = Console.ReadLine();
+            Console.Write("Date: ");
+            entry[3] =  Console.ReadLine();
+            String result = bl.addEntry(entry);
+            if (result != "")
+            {
+                Console.Write("\n" + result + "\n");
+                startMenu();
+            }
+            else 
+            {
+                Console.Write("\n");
+                startMenu();
+            }
         }
 
         private void deleteEntry()
         {
-            Console.Write("Id to delete: ");
+            Console.Write("ID to delete: ");
+            String response = Console.ReadLine();
         }
 
         private void editEntry()
         {
-            Console.Write("Id to edit: ");
+            Console.Write("ID to edit: ");
+            String response = Console.ReadLine();
         }
 
         private void quit()
