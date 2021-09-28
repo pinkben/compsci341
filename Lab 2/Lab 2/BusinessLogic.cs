@@ -11,20 +11,7 @@ namespace Lab_2
     {
         Database data = new Database();
 
-        public bool CheckMenuSelection(String selection)
-        {
-            // Verify that the input for the menu selection is valid
-            if (selection.Equals("1") || selection.Equals("2") || selection.Equals("3") ||
-                selection.Equals("4") || selection.Equals("5"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
+        // This method get all current entries
         public String GetCurrentEntries()
         {
             StringBuilder sb = new StringBuilder();
@@ -49,6 +36,7 @@ namespace Lab_2
             }
         }
 
+        // This method handles adding entries
         public String AddEntry(string[] entry, bool edit = false)
         {
             if (entry[0].Length > 250 || entry[0].Length < 1)
