@@ -101,18 +101,16 @@ namespace Lab_1
                 {
                     int temp = Int32.Parse(entry.Id);
                     if (temp == id)
-                    { 
-                        
+                    {
+                        Entries.Remove(entry);
+                        File.Delete(fileName);
+                        string newJsonString = JsonSerializer.Serialize(Entries);
+                        File.AppendAllText(fileName, newJsonString);
+                        found = true;
+                        break;
                     }
                 }
-                else
-                {
-                    Entries.RemoveAt(id - 1);
-                    File.Delete(fileName);
-                    string newJsonString = JsonSerializer.Serialize(Entries);
-                    File.AppendAllText(fileName, newJsonString);
-                    return true;
-                }
+                return found;
             }
             else
             {
