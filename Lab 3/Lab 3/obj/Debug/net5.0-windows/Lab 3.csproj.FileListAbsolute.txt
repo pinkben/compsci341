@@ -1,0 +1,30 @@
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\bin\Debug\net5.0-windows\Lab 3.exe
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\bin\Debug\net5.0-windows\Lab 3.deps.json
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\bin\Debug\net5.0-windows\Lab 3.runtimeconfig.json
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\bin\Debug\net5.0-windows\Lab 3.runtimeconfig.dev.json
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\bin\Debug\net5.0-windows\Lab 3.dll
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\bin\Debug\net5.0-windows\ref\Lab 3.dll
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\bin\Debug\net5.0-windows\Lab 3.pdb
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.csproj.AssemblyReference.cache
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\AddEntryWindow.g.cs
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\DeleteEntryWindow.g.cs
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\EditEntryIdWindow.g.cs
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\UpdateEntryWindow.g.cs
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3_MarkupCompile.cache
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3_MarkupCompile.lref
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\AddEntryWindow.baml
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\DeleteEntryWindow.baml
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\EditEntryIdWindow.baml
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\UpdateEntryWindow.baml
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.g.resources
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.AssemblyInfoInputs.cache
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.AssemblyInfo.cs
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.csproj.CoreCompileInputs.cache
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.dll
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\ref\Lab 3.dll
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.pdb
+C:\Users\pinkb95\source\repos\compsci341\Lab 3\Lab 3\obj\Debug\net5.0-windows\Lab 3.genruntimeconfig.cache

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\
+c:\users\pinkb95\source\repos\compsci341\lab 2\Lab 2\obj\Debug\net5.0-windows\
 Lab_2
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\App.xaml
+c:\users\pinkb95\source\repos\compsci341\lab 2\Lab 2\App.xaml
 5-795051850
 
 14-519589647
 193-1891726104
 AddEntryWindow.xaml;DeleteEntryWindow.xaml;EditEntryIdWindow.xaml;MainWindow.xaml;UpdateEntryWindow.xaml;
 
-False
+True
 
