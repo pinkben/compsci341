@@ -85,7 +85,7 @@ namespace Lab_2 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Lab 2;V1.0.0.0;component/deleteentrywindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Lab 2;component/deleteentrywindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\DeleteEntryWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

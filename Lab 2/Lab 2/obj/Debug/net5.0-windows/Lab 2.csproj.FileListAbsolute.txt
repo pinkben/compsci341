@@ -20,3 +20,7 @@ C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\Lab 
 C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\ref\Lab 2.dll
 C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\Lab 2.pdb
 C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\Lab 2.genruntimeconfig.cache
+C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\AddEntryWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\DeleteEntryWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\AddEntryWindow.baml
+C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\DeleteEntryWindow.baml

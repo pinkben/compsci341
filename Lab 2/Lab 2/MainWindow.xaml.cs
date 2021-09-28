@@ -34,6 +34,7 @@ namespace Lab_2
         private void ListAllEntriesButton_Click(object sender, RoutedEventArgs e)
         {
             String result = Ui.ListEntries();
+            EntriesTextBox.Clear();
             EntriesTextBox.AppendText(result);
         }
 
@@ -54,6 +55,8 @@ namespace Lab_2
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
+            addEntryWindow.Close();
+            deleteEntryWindow.Close();
             Close();
         }
     }

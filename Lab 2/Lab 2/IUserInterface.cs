@@ -2,8 +2,8 @@
 {
     public interface IUserInterface
     {
-        void AddEntry(string[] entry);
-        void DeleteEntry(string response);
+        string AddEntry(string[] entry);
+        string DeleteEntry(string response);
         void EditEntry();
         string ListEntries();
     }

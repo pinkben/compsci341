@@ -15,14 +15,14 @@ namespace Lab_2
             return bl.GetCurrentEntries();
         }
 
-        public void AddEntry(string[] entry)
+        public string AddEntry(string[] entry)
         {
-            bl.AddEntry(entry);
+            return bl.AddEntry(entry);
         }
 
-        public void DeleteEntry(string response)
+        public string DeleteEntry(string response)
         {
-            bl.RemoveEntry(response);
+            return bl.RemoveEntry(response);
         }
 
         public void EditEntry()

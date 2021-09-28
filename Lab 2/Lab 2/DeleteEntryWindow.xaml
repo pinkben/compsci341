@@ -7,10 +7,19 @@
         mc:Ignorable="d"
         Title="DeleteEntryWindow" Height="250" Width="300">
     <Grid>
-        <Label x:Name="DeleteEntryLabel" Content="Delete Entry" HorizontalAlignment="Center" Height="50" Margin="0,27,0,0" VerticalAlignment="Top" Width="115" FontSize="18"/>
-        <Label x:Name="IdLabel" Content="ID: " HorizontalAlignment="Left" Height="33" Margin="44,84,0,0" VerticalAlignment="Top" Width="51" FontSize="14"/>
-        <Button x:Name="DeleteEntryButton" Content="Delete Entry" Margin="73,179,73,10" FontSize="16"/>
-        <TextBox x:Name="DeleteEntryTextBox" TextWrapping="Wrap" Margin="73,92,132,125"/>
+        <Label x:Name="DeleteEntryLabel" Content="Delete Entry" HorizontalAlignment="Left" Height="45" Margin="93,33,0,0" VerticalAlignment="Top" Width="124" FontSize="18" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.427"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="IdLabel" Content="ID: " HorizontalAlignment="Left" Height="33" Margin="72,0,0,0" VerticalAlignment="Center" Width="43" FontSize="14"/>
+        <Button x:Name="DeleteEntryButton" Content="Delete Entry" Margin="73,162,73,27" FontSize="16" Click="DeleteEntryButton_Click"/>
+        <TextBox x:Name="IdTextBox" TextWrapping="Wrap" Margin="106,97,59,97"/>
 
     </Grid>
 </Window>

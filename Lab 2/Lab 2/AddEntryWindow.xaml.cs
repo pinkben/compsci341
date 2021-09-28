@@ -19,7 +19,7 @@ namespace Lab_2
     /// </summary>
     public partial class AddEntryWindow : Window
     {
-        string[] entry = new string[5];
+        UserInterface Ui = new UserInterface();
         public AddEntryWindow()
         {
             InitializeComponent();
@@ -27,27 +27,43 @@ namespace Lab_2
 
         private void AddEntryButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ClueTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void AnswerTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void DifficultyTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void DateTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            string[] entry = new string[5];
+            entry[0] = ClueTextBox.Text;
+            entry[1] = AnswerTextBox.Text;
+            entry[2] = DifficultyTextBox.Text;
+            entry[3] = DateTextBox.Text;
+            if (Ui.AddEntry(entry).Equals(""))
+            {
+                ClueTextBox.Clear();
+                AnswerTextBox.Clear();
+                DifficultyTextBox.Clear();
+                DateTextBox.Clear();
+                Hide();
+            }
+            else if (Ui.AddEntry(entry).Equals("INVALID CLUE"))
+            {
+                MessageBox.Show("INVALID CLUE", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                ClueTextBox.Clear();
+            }
+            else if (Ui.AddEntry(entry).Equals("INVALID ANSWER"))
+            {
+                MessageBox.Show("INVALID ANSWER", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                AnswerTextBox.Clear();
+            }
+            else if (Ui.AddEntry(entry).Equals("INVALID DIFFICULTY"))
+            {
+                MessageBox.Show("INVALID DIFFICULTY", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                DifficultyTextBox.Clear();
+            }
+            else if (Ui.AddEntry(entry).Equals("INVALID DATE"))
+            {
+                MessageBox.Show("INVALID DATE", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                DateTextBox.Clear();
+            }
+            else
+            {
+                MessageBox.Show("UNKNOWN ERROR", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

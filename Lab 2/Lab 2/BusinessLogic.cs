@@ -53,16 +53,16 @@ namespace Lab_2
         {
             if (entry[0].Length > 250 || entry[0].Length < 1)
             {
-                return "Error while adding entry: \nINVALID CLUE\n";
+                return "INVALID CLUE";
             }
             else if (entry[1].Length > 21 || entry[1].Length < 1)
             {
-                return "Error while adding entry: \nINVALID ANSWER\n";
+                return "INVALID ANSWER";
             }
             else if (!(entry[2].Equals("1") || entry[2].Equals("2") || entry[2].Equals("3") ||
                      entry[2].Equals("4") || entry[2].Equals("5")))
             {
-                return "Error while adding entry: \nINVALID DIFFICULTY\n";
+                return "INVALID DIFFICULTY";
             }
             else
             {
@@ -88,7 +88,7 @@ namespace Lab_2
                     }
                     else
                     {
-                        return "Error while adding entry: \nINVALID DATE\n";
+                        return "INVALID DATE";
                     }
                 }
                 else
@@ -105,16 +105,16 @@ namespace Lab_2
             {
                 if (data.RemoveEntry(idNum))
                 {
-                    return "\n";
+                    return "";
                 }
                 else
                 {
-                    return "Error while removing entry: \nUNABLE TO FIND ID\n";
+                    return "UNABLE TO FIND ID";
                 }
             }
             else
             {
-                return "Error while removing entry: \nINVALID ID\n";
+                return "INVALID ID";
             }
         }
 

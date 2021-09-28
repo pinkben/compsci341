@@ -1,32 +1,22 @@
-﻿<Window x:Name="AddEntryForm" x:Class="Lab_2.AddEntryWindow"
+﻿<Window x:Class="Lab_2.AddEntryWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_2"
         mc:Ignorable="d"
-        Title="AddEntryWindow" Height="300" Width="600" WindowStartupLocation="Manual">
-    <Grid Visibility="Visible">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="365*"/>
-            <ColumnDefinition Width="24*"/>
-            <ColumnDefinition Width="105*"/>
-            <ColumnDefinition Width="106*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Label x:Name="AddEntryTextBox" Content="Add Entry" Grid.RowSpan="2" Margin="252,29,0,0" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label x:Name="ClueLabel" Content="Clue:&#xD;&#xA;" Grid.RowSpan="2" Margin="117,72,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Height="39"/>
-        <Label x:Name="AnswerLabel" Content="Answer:&#xD;&#xA;&#xA;" Grid.RowSpan="2" Margin="117,111,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Height="41" Width="68"/>
-        <Label x:Name="DifficultyLabel" Content="Difficulty :" Grid.RowSpan="2" Margin="117,157,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Width="93"/>
-        <Label x:Name="DateLabel" Content="Date:" Grid.RowSpan="2" Margin="117,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="16" Height="41" Width="68"/>
-        <Button x:Name="AddEntryButton" Content="Add Entry" Grid.RowSpan="2" Margin="50,238,10,10" FontSize="14" Click="AddEntryButton_Click" Grid.ColumnSpan="2" Grid.Column="2"/>
-        <TextBox x:Name="ClueTextBox" Grid.RowSpan="2" TextWrapping="Wrap" Margin="180,81,52,182" TextChanged="ClueTextBox_TextChanged" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="AnswerTextBox" Grid.RowSpan="2" TextWrapping="Wrap" Margin="185,121,47,142" TextChanged="AnswerTextBox_TextChanged" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="DifficultyTextBox" Grid.RowSpan="2" TextWrapping="Wrap" Margin="199,162,33,101" TextChanged="DifficultyTextBox_TextChanged" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="DateTextBox" Grid.RowSpan="2" TextWrapping="Wrap" Margin="169,208,63,55" TextChanged="DateTextBox_TextChanged" Grid.ColumnSpan="3"/>
+        Title="AddEntryWindow" Height="410" Width="666">
+    <Grid>
+        <Label x:Name="AddEntryLabel" Content="Add Entry" HorizontalAlignment="Center" Height="49" Margin="0,32,0,0" VerticalAlignment="Top" Width="116" FontSize="18"/>
+        <Label x:Name="ClueLabel" Content="Clue:" HorizontalAlignment="Left" Height="37" Margin="84,114,0,0" VerticalAlignment="Top" Width="59" FontSize="16" RenderTransformOrigin="0.939,1.39"/>
+        <Label x:Name="AnswerLabel" Content="Answer:" HorizontalAlignment="Left" Height="37" Margin="79,175,0,0" VerticalAlignment="Top" Width="64" FontSize="16" RenderTransformOrigin="0.939,1.39"/>
+        <Label x:Name="DifficultyLabel" Content="Difficulty:" HorizontalAlignment="Left" Height="37" Margin="79,236,0,0" VerticalAlignment="Top" Width="80" FontSize="16" RenderTransformOrigin="0.939,1.39"/>
+        <Label x:Name="DateLabel" Content="Date:" HorizontalAlignment="Left" Height="36" Margin="84,303,0,0" VerticalAlignment="Top" Width="59" FontSize="16" RenderTransformOrigin="0.939,1.39"/>
+        <Button x:Name="AddEntryButton" Content="Add Entry" Margin="452,286,56,48" FontSize="16" Click="AddEntryButton_Click"/>
+        <TextBox x:Name="ClueTextBox" TextWrapping="Wrap" Margin="143,108,257,237"/>
+        <TextBox x:Name="AnswerTextBox" Margin="148,176,257,176" TextWrapping="Wrap"/>
+        <TextBox x:Name="DifficultyTextBox" Margin="164,231,252,116" TextWrapping="Wrap"/>
+        <TextBox x:Name="DateTextBox" Margin="143,298,257,50" TextWrapping="Wrap"/>
 
     </Grid>
 </Window>

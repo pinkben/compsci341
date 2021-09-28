@@ -19,9 +19,33 @@ namespace Lab_2
     /// </summary>
     public partial class DeleteEntryWindow : Window
     {
+        UserInterface Ui = new UserInterface();
         public DeleteEntryWindow()
         {
             InitializeComponent();
+        }
+
+        private void DeleteEntryButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Ui.DeleteEntry(IdTextBox.Text).Equals(""))
+            {
+                IdTextBox.Clear();
+                Hide();
+            }
+            else if (Ui.DeleteEntry(IdTextBox.Text).Equals("INVALID ID"))
+            {
+                MessageBox.Show("INVALID ID", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                IdTextBox.Clear();
+            }
+            else if (Ui.DeleteEntry(IdTextBox.Text).Equals("UNABLE TO FIND ID"))
+            {
+                MessageBox.Show("UNABLE TO FIND ID", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                IdTextBox.Clear();
+            }
+            else
+            {
+                MessageBox.Show("UNKNOWN ERROR", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }
