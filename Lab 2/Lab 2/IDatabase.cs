@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lab_1
+namespace Lab_2
 {
     interface IDatabase
     {

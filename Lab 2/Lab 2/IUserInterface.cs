@@ -1,7 +1,10 @@
-﻿namespace Lab_1
+﻿namespace Lab_2
 {
-    interface IUserInterface
+    public interface IUserInterface
     {
-        void StartMenu();
+        void AddEntry(string[] entry);
+        void DeleteEntry(string response);
+        void EditEntry();
+        string ListEntries();
     }
 }

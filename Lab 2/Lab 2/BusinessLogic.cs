@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_1
+namespace Lab_2
 {
     class BusinessLogic : IBusinessLogic
     {
@@ -38,12 +38,12 @@ namespace Lab_1
             {
                 foreach (Entry entry in Entries)
                 {
-                    sb.AppendLine(entry.Id + ":");
-                    sb.AppendLine("Clue: " + entry.Clue);
-                    sb.AppendLine("Answer: " + entry.Answer);
-                    sb.AppendLine("Difficulty: " + entry.Difficulty);
-                    sb.AppendLine("Data: " + entry.Date);
-                    sb.AppendLine("=======");
+                    sb.Append(entry.Id + ":");
+                    sb.AppendLine(" Clue: " + entry.Clue);
+                    sb.AppendLine("   Answer: " + entry.Answer);
+                    sb.AppendLine("   Difficulty: " + entry.Difficulty);
+                    sb.AppendLine("   Data: " + entry.Date);
+                    sb.AppendLine("------------------------------");
                 }
                 return sb.ToString();
             }

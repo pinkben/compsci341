@@ -20,9 +20,41 @@ namespace Lab_2
     /// </summary>
     public partial class MainWindow : Window
     {
+        UserInterface Ui = new UserInterface();
+        AddEntryWindow addEntryWindow = new AddEntryWindow();
+        DeleteEntryWindow deleteEntryWindow = new DeleteEntryWindow();
+
         public MainWindow()
         {
             InitializeComponent();
+            addEntryWindow.Hide();
+            deleteEntryWindow.Hide();
+        }
+
+        private void ListAllEntriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            String result = Ui.ListEntries();
+            EntriesTextBox.AppendText(result);
+        }
+
+        private void AddEntryButton_Click(object sender, RoutedEventArgs e)
+        {
+            addEntryWindow.Show();
+        }
+
+        private void UpdateEntryButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteEntryButton_Click(object sender, RoutedEventArgs e)
+        {
+            deleteEntryWindow.Show();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

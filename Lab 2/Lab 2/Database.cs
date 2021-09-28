@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Lab_1
+namespace Lab_2
 {
     class Database : IDatabase
     {
