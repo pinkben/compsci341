@@ -23,12 +23,14 @@ namespace Lab_2
         UserInterface Ui = new UserInterface();
         AddEntryWindow addEntryWindow = new AddEntryWindow();
         DeleteEntryWindow deleteEntryWindow = new DeleteEntryWindow();
+        EditEntryIdWindow editEntryIdWindow = new EditEntryIdWindow();
 
         public MainWindow()
         {
             InitializeComponent();
             addEntryWindow.Hide();
             deleteEntryWindow.Hide();
+            editEntryIdWindow.Hide();
         }
 
         private void ListAllEntriesButton_Click(object sender, RoutedEventArgs e)
@@ -45,7 +47,7 @@ namespace Lab_2
 
         private void UpdateEntryButton_Click(object sender, RoutedEventArgs e)
         {
-
+            editEntryIdWindow.Show();
         }
 
         private void DeleteEntryButton_Click(object sender, RoutedEventArgs e)
@@ -57,6 +59,7 @@ namespace Lab_2
         {
             addEntryWindow.Close();
             deleteEntryWindow.Close();
+            editEntryIdWindow.CloseWindow();
             Close();
         }
     }

@@ -24,3 +24,7 @@ C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\AddE
 C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\DeleteEntryWindow.g.cs
 C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\AddEntryWindow.baml
 C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\DeleteEntryWindow.baml
+C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\EditEntryIdWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\UpdateEntryWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\EditEntryIdWindow.baml
+C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\obj\Debug\net5.0-windows\UpdateEntryWindow.baml

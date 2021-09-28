@@ -25,29 +25,9 @@ namespace Lab_2
             return bl.RemoveEntry(response);
         }
 
-        public void EditEntry()
+        public void EditEntry(string[] response)
         {
-            Console.Write("ID to edit: ");
-            String response = Console.ReadLine();
-            bool valid = bl.EditEntry(response);
-            if (!valid)
-            {
-                Console.Write("Error while editing entry: \nINVALID ID");
-            }
-            else
-            {
-                string[] entry = new string[5];
-                Console.Write("\nEditing Entry \n============== \nClue: ");
-                entry[0] = Console.ReadLine();
-                Console.Write("Answer: ");
-                entry[1] = Console.ReadLine();
-                Console.Write("Difficulty: ");
-                entry[2] = Console.ReadLine();
-                Console.Write("Date (mm/dd/yyyy): ");
-                entry[3] = Console.ReadLine();
-                entry[4] = response;
-                bl.AddEntry(entry, true);
-            }
+            bl.AddEntry(response, true);
         }
     }
 }

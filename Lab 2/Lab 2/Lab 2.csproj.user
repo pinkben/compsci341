@@ -15,7 +15,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="UpdateEntryWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AddEntryWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditEntryIdWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DeleteEntryWindow.xaml">

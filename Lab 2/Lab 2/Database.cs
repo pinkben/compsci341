@@ -61,12 +61,18 @@ namespace Lab_2
                 Entries.Clear();
                 Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
                 // If we are adding an edited entry, we do not need to assign an Id
-                if (!edit && Int32.TryParse(Entries.ElementAt<Entry>(Entries.Count - 1).Id, out int lastId))
+                if (Entries.Count != 0)
                 {
-                    idNum = lastId + 1;
-                    newEntry.Id = idNum.ToString();
+                    if (!edit && Int32.TryParse(Entries.ElementAt<Entry>(Entries.Count - 1).Id, out int lastId))
+                    {
+                        idNum = lastId + 1;
+                        newEntry.Id = idNum.ToString();
+                    }
                 }
-
+                else
+                {
+                    newEntry.Id = "1";
+                }
             }
             else
             {

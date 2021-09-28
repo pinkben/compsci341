@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Bpink\source\repos\compsci341\Lab 2\Lab 2\App.xaml
-3-378305791
+5-795051850
 
-12-504470778
+14-519589647
 193-1891726104
-AddEntryWindow.xaml;DeleteEntryWindow.xaml;MainWindow.xaml;
+AddEntryWindow.xaml;DeleteEntryWindow.xaml;EditEntryIdWindow.xaml;MainWindow.xaml;UpdateEntryWindow.xaml;
 
 False
 
