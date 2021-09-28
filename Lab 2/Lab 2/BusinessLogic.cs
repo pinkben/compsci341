@@ -11,7 +11,7 @@ namespace Lab_1
     {
         Database data = new Database();
 
-        public bool checkMenuSelection(String selection)
+        public bool CheckMenuSelection(String selection)
         {
             // Verify that the input for the menu selection is valid
             if (selection.Equals("1") || selection.Equals("2") || selection.Equals("3") ||
@@ -25,11 +25,11 @@ namespace Lab_1
             }
         }
 
-        public String getCurrentEntries()
+        public String GetCurrentEntries()
         {
             StringBuilder sb = new StringBuilder();
             String allEntries = "";
-            List<Entry> Entries = data.getAllEntries();
+            List<Entry> Entries = data.GetAllEntries();
             if (Entries == null)
             {
                 return allEntries;
@@ -49,7 +49,7 @@ namespace Lab_1
             }
         }
 
-        public String addEntry(string[] entry, bool edit = false)
+        public String AddEntry(string[] entry, bool edit = false)
         {
             if (entry[0].Length > 250 || entry[0].Length < 1)
             {
@@ -83,7 +83,7 @@ namespace Lab_1
                             Date = entry[3],
                             Id = entry[4]
                         };
-                        data.addEntry(validEntry, edit);
+                        data.AddEntry(validEntry, edit);
                         return "";
                     }
                     else
@@ -99,11 +99,11 @@ namespace Lab_1
 
         }
 
-        public String removeEntry(string id)
+        public String RemoveEntry(string id)
         {
             if (Int32.TryParse(id, out int idNum) && idNum > 0)
             {
-                if (data.removeEntry(idNum))
+                if (data.RemoveEntry(idNum))
                 {
                     return "\n";
                 }
@@ -118,11 +118,11 @@ namespace Lab_1
             }
         }
 
-        public bool editEntry(string id)
+        public bool EditEntry(string id)
         {
             if (Int32.TryParse(id, out int idNum) && idNum > 0)
             {
-                Entry entry = data.getEntry(idNum);
+                Entry entry = data.GetEntry(idNum);
                 if (entry == null)
                 {
                     return false;
@@ -130,7 +130,7 @@ namespace Lab_1
                 else
                 {
                     // remove the old entry from the database
-                    data.removeEntry(idNum);
+                    data.RemoveEntry(idNum);
                     return true;
                 }
             }

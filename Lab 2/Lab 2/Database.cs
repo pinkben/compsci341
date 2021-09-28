@@ -13,7 +13,7 @@ namespace Lab_1
         string fileName = "Database.json";
         List<Entry> Entries = new List<Entry>();
 
-        public List<Entry> getAllEntries()
+        public List<Entry> GetAllEntries()
         {
             if (File.Exists(fileName))
             {
@@ -28,7 +28,7 @@ namespace Lab_1
             }
         }
 
-        public Entry getEntry(int id)
+        public Entry GetEntry(int id)
         {
             if (File.Exists(fileName))
             {
@@ -50,7 +50,7 @@ namespace Lab_1
             }
         }
 
-        public void addEntry(Entry entry, bool edit)
+        public void AddEntry(Entry entry, bool edit)
         {
             Entry newEntry = entry;
             int idNum;
@@ -89,25 +89,28 @@ namespace Lab_1
             File.AppendAllText(fileName, newJsonString);
         }
 
-        public bool removeEntry(int id)
+        public bool RemoveEntry(int id)
         {
+            bool found = false;
             if (File.Exists(fileName))
             {
                 string fileJsonString = File.ReadAllText(fileName);
                 Entries.Clear();
                 Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
-                if (id > Entries.Count)
+                foreach (Entry entry in Entries)
                 {
-                    return false;
+                    int temp = Int32.Parse(entry.Id);
+                    if (temp == id)
+                    {
+                        Entries.Remove(entry);
+                        File.Delete(fileName);
+                        string newJsonString = JsonSerializer.Serialize(Entries);
+                        File.AppendAllText(fileName, newJsonString);
+                        found = true;
+                        break;
+                    }
                 }
-                else
-                {
-                    Entries.RemoveAt(id - 1);
-                    File.Delete(fileName);
-                    string newJsonString = JsonSerializer.Serialize(Entries);
-                    File.AppendAllText(fileName, newJsonString);
-                    return true;
-                }
+                return found;
             }
             else
             {

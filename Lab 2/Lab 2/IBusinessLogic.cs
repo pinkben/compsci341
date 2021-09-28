@@ -2,10 +2,10 @@
 {
     interface IBusinessLogic
     {
-        string addEntry(string[] entry, bool edit = false);
-        bool checkMenuSelection(string selection);
-        bool editEntry(string id);
-        string getCurrentEntries();
-        string removeEntry(string id);
+        string AddEntry(string[] entry, bool edit = false);
+        bool CheckMenuSelection(string selection);
+        bool EditEntry(string id);
+        string GetCurrentEntries();
+        string RemoveEntry(string id);
     }
 }

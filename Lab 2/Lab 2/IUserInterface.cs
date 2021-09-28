@@ -2,6 +2,6 @@
 {
     interface IUserInterface
     {
-        void startMenu();
+        void StartMenu();
     }
 }

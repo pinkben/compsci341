@@ -10,30 +10,30 @@ namespace Lab_1
     {
         BusinessLogic bl = new BusinessLogic();
 
-        public void startMenu()
+        public void StartMenu()
         {
             Console.Write("Menu \n ==== \n 1. List Entries \n 2. Add Entry" +
                               "\n 3. Delete Entry \n 4. Edit Entry \n 5. Quit \n Choice: ");
             String response = Console.ReadLine();
             // If the response is valid, moved forward with that action, otherwise send an error and try again
-            if (bl.checkMenuSelection(response))
+            if (bl.CheckMenuSelection(response))
             {
                 switch (response)
                 {
                     case "1":
-                        listEntries();
+                        ListEntries();
                         break;
                     case "2":
-                        addEntry();
+                        AddEntry();
                         break;
                     case "3":
-                        deleteEntry();
+                        DeleteEntry();
                         break;
                     case "4":
-                        editEntry();
+                        EditEntry();
                         break;
                     case "5":
-                        quit();
+                        Quit();
                         break;
                     default:
                         break;
@@ -42,20 +42,20 @@ namespace Lab_1
             else
             {
                 Console.Write("INVALID SELECTION.  Please selection a number 1-5. \n");
-                startMenu();
+                StartMenu();
             }
 
         }
 
-        private void listEntries()
+        private void ListEntries()
         {
             Console.WriteLine("\n Entries \n =======");
-            String currentEntries = bl.getCurrentEntries();
+            String currentEntries = bl.GetCurrentEntries();
             Console.WriteLine(currentEntries);
-            startMenu();
+            StartMenu();
         }
 
-        private void addEntry()
+        private void AddEntry()
         {
             string[] entry = new string[5];
             Console.Write("\nAdding Entry \n============== \nClue: ");
@@ -66,32 +66,32 @@ namespace Lab_1
             entry[2] = Console.ReadLine();
             Console.Write("Date (mm/dd/yyyy): ");
             entry[3] = Console.ReadLine();
-            String result = bl.addEntry(entry);
+            String result = bl.AddEntry(entry);
             if (result != "")
             {
                 Console.Write("\n" + result + "\n");
-                startMenu();
+                StartMenu();
             }
             else
             {
                 Console.Write("\n");
-                startMenu();
+                StartMenu();
             }
         }
 
-        private void deleteEntry()
+        private void DeleteEntry()
         {
             Console.Write("ID to delete: ");
             String response = Console.ReadLine();
-            Console.Write(bl.removeEntry(response));
-            startMenu();
+            Console.Write(bl.RemoveEntry(response));
+            StartMenu();
         }
 
-        private void editEntry()
+        private void EditEntry()
         {
             Console.Write("ID to edit: ");
             String response = Console.ReadLine();
-            bool valid = bl.editEntry(response);
+            bool valid = bl.EditEntry(response);
             if (!valid)
             {
                 Console.Write("Error while editing entry: \nINVALID ID");
@@ -108,12 +108,12 @@ namespace Lab_1
                 Console.Write("Date (mm/dd/yyyy): ");
                 entry[3] = Console.ReadLine();
                 entry[4] = response;
-                bl.addEntry(entry, true);
+                bl.AddEntry(entry, true);
             }
-            startMenu();
+            StartMenu();
         }
 
-        private void quit()
+        private void Quit()
         {
             Environment.Exit(0);
         }
