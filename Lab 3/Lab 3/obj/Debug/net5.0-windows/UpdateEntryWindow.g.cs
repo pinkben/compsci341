@@ -133,7 +133,7 @@ namespace Lab_3 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Lab 3;component/updateentrywindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Lab 3_qr21yepo_wpftmp;component/updateentrywindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UpdateEntryWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

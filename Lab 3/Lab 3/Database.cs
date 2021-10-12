@@ -32,6 +32,23 @@ namespace Lab_3
 
         public Entry GetEntry(int id)
         {
+            string connectionStringToDB = ConfigurationManager.ConnectionStrings["new connection"].ConnectionString;
+            MySqlConnection sqlConnection = new MySqlConnection(connectionStringToDB);
+            sqlConnection.Open();
+            MySqlCommand getCmd = new MySqlCommand("SELECT * FROM CrosswordEntry;", sqlConnection);
+            MySqlDataReader reader = getCmd.ExecuteReader();
+            int count = reader.FieldCount;
+            StringBuilder str = new StringBuilder();
+            while (reader.Read())
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    str.Append(reader.GetValue(i) + ", ");
+                    str.Append("\n");
+                }
+            }
+            sqlConnection.Close();
+
             if (File.Exists(fileName))
             {
                 string fileJsonString = File.ReadAllText(fileName);
@@ -58,49 +75,20 @@ namespace Lab_3
             MySqlConnection sqlConnection = new MySqlConnection(connectionStringToDB);
             sqlConnection.Open();
             Entry newEntry = entry;
-            int idNum;
-
-            if (File.Exists(fileName))
-            {
-                string fileJsonString = File.ReadAllText(fileName);
-
-                File.Delete(fileName);
-                Entries.Clear();
-                Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
-                // If we are adding an edited entry, we do not need to assign an Id
-                if (Entries.Count != 0)
-                {
-                    if (!edit && Int32.TryParse(Entries.ElementAt<Entry>(Entries.Count - 1).Id, out int lastId))
-                    {
-                        idNum = lastId + 1;
-                        newEntry.Id = idNum.ToString();
-                    }
-                }
-                else
-                {
-                    newEntry.Id = "1";
-                }
-            }
-            else
-            {
-                newEntry.Id = "1";
-            }
             if (edit)
             {
                 // Insert edited entry back into correct spot in list
                 if (Int32.TryParse(newEntry.Id, out int entryId))
                 {
-                    MySqlCommand deleteCmd = new MySqlCommand("DELETE FROM CrosswordEntry WHERE id = @id;", sqlConnection);
-                    deleteCmd.Parameters.Add(new MySqlParameter("id", entryId));
-                    MySqlDataReader reader = deleteCmd.ExecuteReader();
-                    MySqlCommand insertCmd = new MySqlCommand("INSERT INTO CrosswordEntry(id, clue, answer, difficulty, date) " +
-                        "VALUE(@id, @clue, @answer, @difficulty, @date);", sqlConnection);
-                    insertCmd.Parameters.Add(new MySqlParameter("id", entryId));
-                    insertCmd.Parameters.Add(new MySqlParameter("clue", newEntry.Clue));
-                    insertCmd.Parameters.Add(new MySqlParameter("answer", newEntry.Answer));
-                    insertCmd.Parameters.Add(new MySqlParameter("difficulty", newEntry.Difficulty));
-                    insertCmd.Parameters.Add(new MySqlParameter("date", newEntry.Date));
-                    MySqlDataReader reader1 = insertCmd.ExecuteReader();
+                    //Remove old entry
+                    MySqlCommand editCmd = new MySqlCommand("UPDATE CrosswordEntry SET clue = @clue, answer = @answer, difficulty = @difficulty, " +
+                        "date = @date WHERE ID = @id", sqlConnection);
+                    editCmd.Parameters.Add(new MySqlParameter("id", entryId));
+                    editCmd.Parameters.Add(new MySqlParameter("clue", newEntry.Clue));
+                    editCmd.Parameters.Add(new MySqlParameter("answer", newEntry.Answer));
+                    editCmd.Parameters.Add(new MySqlParameter("difficulty", newEntry.Difficulty));
+                    editCmd.Parameters.Add(new MySqlParameter("date", newEntry.Date));
+                    MySqlDataReader reader = editCmd.ExecuteReader();
                 }
             }
             else
@@ -114,45 +102,25 @@ namespace Lab_3
                 MySqlDataReader reader = cmd.ExecuteReader();
                 Entries.Add(newEntry);
             }
-            string newJsonString = JsonSerializer.Serialize(Entries);
-            File.AppendAllText(fileName, newJsonString);
             sqlConnection.Close();
         }
 
         public bool RemoveEntry(int id)
         {
-            bool found = false;
             string connectionStringToDB = ConfigurationManager.ConnectionStrings["new connection"].ConnectionString;
             MySqlConnection sqlConnection = new MySqlConnection(connectionStringToDB);
             sqlConnection.Open();
-            if (File.Exists(fileName))
+            MySqlCommand deleteCmd = new MySqlCommand("DELETE FROM CrosswordEntry WHERE id = @id;", sqlConnection);
+            deleteCmd.Parameters.Add(new MySqlParameter("id", id));
+            int row = deleteCmd.ExecuteNonQuery();
+            sqlConnection.Close();
+            if (row == 0)
             {
-                //MySqlCommand deleteCmd = new MySqlCommand("DELETE FROM CrosswordEntry WHERE id = @id;", sqlConnection);
-                //deleteCmd.Parameters.Add(new MySqlParameter("id", id));
-                //MySqlDataReader reader = deleteCmd.ExecuteReader();
-                string fileJsonString = File.ReadAllText(fileName);
-                Entries.Clear();
-                Entries = JsonSerializer.Deserialize<List<Entry>>(fileJsonString);
-                foreach (Entry entry in Entries)
-                {
-                    int temp = Int32.Parse(entry.Id);
-                    if (temp == id)
-                    {
-                        Entries.Remove(entry);
-                        File.Delete(fileName);
-                        string newJsonString = JsonSerializer.Serialize(Entries);
-                        File.AppendAllText(fileName, newJsonString);
-                        found = true;
-                        break;
-                    }
-                }
-                sqlConnection.Close();
-                return found;
+                return false;
             }
             else
             {
-                sqlConnection.Close();
-                return false;
+                return true;
             }
         }
     }

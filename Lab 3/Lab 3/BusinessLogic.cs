@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_3
 {
-    class BusinessLogic : IBusinessLogic
+    public class BusinessLogic : IBusinessLogic
     {
         Database data = new Database();
 
