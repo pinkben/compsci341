@@ -1,0 +1,39 @@
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.csproj.AssemblyReference.cache
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\AddEntryWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\DeleteEntryWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\EditEntryIdWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\UpdateEntryWindow.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4_MarkupCompile.cache
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4_MarkupCompile.lref
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Lab 4.exe
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Lab 4.dll.config
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Lab 4.deps.json
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Lab 4.runtimeconfig.json
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Lab 4.runtimeconfig.dev.json
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Lab 4.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\ref\Lab 4.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Lab 4.pdb
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\bin\Debug\net5.0-windows\Zstandard.Net.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\AddEntryWindow.baml
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\DeleteEntryWindow.baml
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\EditEntryIdWindow.baml
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\UpdateEntryWindow.baml
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.g.resources
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.AssemblyInfoInputs.cache
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.AssemblyInfo.cs
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.csproj.CoreCompileInputs.cache
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\ref\Lab 4.dll
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.pdb
+C:\Users\Bpink\source\repos\compsci341\Lab 4\Lab 4\Lab 4\obj\Debug\net5.0-windows\Lab 4.genruntimeconfig.cache
