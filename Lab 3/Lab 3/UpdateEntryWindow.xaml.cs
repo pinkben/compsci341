@@ -40,7 +40,7 @@ namespace Lab_3
             entry[2] = DifficultyTextBox.Text;
             entry[3] = DateTextBox.Text;
             entry[4] = id;
-            if (Ui.AddEntry(entry).Equals(""))
+            if (Ui.EditEntry(entry).Equals(""))
             {
                 ClueTextBox.Clear();
                 AnswerTextBox.Clear();

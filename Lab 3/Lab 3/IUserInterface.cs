@@ -4,7 +4,7 @@
     {
         string AddEntry(string[] entry);
         string DeleteEntry(string response);
-        void EditEntry(string[] response);
+        string EditEntry(string[] response);
         string ListEntries();
     }
 }

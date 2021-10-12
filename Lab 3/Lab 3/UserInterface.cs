@@ -25,9 +25,9 @@ namespace Lab_3
             return bl.RemoveEntry(response);
         }
 
-        public void EditEntry(string[] response)
+        public string EditEntry(string[] response)
         {
-            bl.AddEntry(response, true);
+            return bl.AddEntry(response, true);
         }
     }
 }
